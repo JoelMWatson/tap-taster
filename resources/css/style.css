@@ -1,0 +1,74 @@
+*,
+*::after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 50%; } }
+
+body {
+  box-sizing: border-box; }
+
+::selection {
+  background-color: #55c57a;
+  color: #ffffff; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #555555; }
+
+.heading-primary {
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 6rem;
+  /* fix for shaking issues with animations */
+  backface-visibility: hidden; }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  transition: all .2s; }
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/tap-taster.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed; }
+
+/* ----- index page ----- */
+/* ----- register page ----- */
+/* -----back to top----- */
+.scroll-to-top {
+  z-index: 9999;
+  position: fixed;
+  bottom: 25px;
+  right: 50px;
+  display: none;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding-top: 10px; }

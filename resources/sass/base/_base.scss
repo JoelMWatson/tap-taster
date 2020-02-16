@@ -1,0 +1,25 @@
+*,
+*::after,
+*:before,{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; 
+}
+
+html {
+    // Defines what 1 rem is for creating responsive later
+    font-size: 62.5%; // sets from default 16px to 10px
+    
+    @media only screen and (max-width: $breakpoint) {
+        font-size: 50%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
