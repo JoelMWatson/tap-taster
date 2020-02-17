@@ -1,6 +1,43 @@
 /* ----- index page ----- */
+.main {
+    & > * {
+        padding-top: 6rem; 
+        padding-bottom: 6rem;
+    }
+}
+.section-about {
+    
+    h2 {
+        text-align: center;
+    }
+    
+    .about {
+        margin: 0 15rem;
+        
+        &__text {
+           font-size: $default-font-size; 
+        }
+        
+    }
+}
+
+.section-process {
+    background-color: $color-grey-light-1;
+
+    h2 {
+        text-align: center;
+    }
+}
+
+.section-team {
+    h2 {
+        text-align: center;
+    }
+}
 
 /* ----- register page ----- */
+
+
 
 /* -----back to top----- */
 .scroll {
