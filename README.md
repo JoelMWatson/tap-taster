@@ -1,5 +1,5 @@
 # Tap Taster
-(Code Fellows 300 Course Final Equivalence project)
+(Code Fellows 200 Course Final Equivalence Project)
 
 Tap taster is a website that helps you keep track of your favorite beers. You can create an account, log in, and start writing tasting notes for beers as you try them. Each tasting note consists of a beer name, a rating,
 
