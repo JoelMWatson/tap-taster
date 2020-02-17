@@ -9,4 +9,4 @@ Tap taster is a website that helps you keep track of your favorite beers. You ca
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
