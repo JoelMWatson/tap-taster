@@ -63,6 +63,28 @@
     h2 {
         text-align: center;
     }
+    
+    & .team {
+        margin: 0 15rem;
+    }
+    
+    & .member {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        &__picture {
+            margin: 2rem 0;
+            flex: 0 0 25rem;
+        }
+        
+        &__text {
+            text-align: center;
+            font-size: $default-font-size;
+            width: 500px;
+            
+        }
+    }
 }
 
 /* ----- register page ----- */
