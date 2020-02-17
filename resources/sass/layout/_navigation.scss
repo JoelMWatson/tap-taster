@@ -1,22 +1,42 @@
 .navigation {
+    display: flex;
+    justify-content: space-between;
     
     &__logo-box {
-        
+        height: 15rem;
+        width: 15rem;
+        margin-left: 15rem;
+        margin-top: 1rem;
     }
     
     &__logo {
-        
+        width: 100%;
     }
     
     &__list {
-        
+        flex: 0 0 40%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        list-style: none;
+        margin-right: 15rem;
     }
     
     &__item {
-        
+        // nothing needed yet
     }
     
     &__link {
+        text-decoration: none;
+        font-size: 2rem;
+        &:link,
+        &:visited {
+            color: $color-white;
+        }
         
+        &:hover,
+        &:active {
+            color: $color-primary;
+        }
     }
 }

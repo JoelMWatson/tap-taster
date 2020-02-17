@@ -1,0 +1,21 @@
+.form {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    &__field {
+        display: flex;
+        
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+    
+    &__label {
+        flex: 0 0 20%;
+    }
+    
+    &__input {
+        flex: 0 1 80%;
+    }
+}

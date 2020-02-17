@@ -6,15 +6,41 @@
     background-attachment: fixed;
     
     &__content {
-        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90%;
+        font-size: $default-font-size;
+        color: $color-white;
     }
     
     &__text {
-        
+        margin-right: 5rem;
     }
     
     &__form {
+        margin-left: 5rem;
+        background-color: rgba($color-secondary, .5);
+        padding: 3rem;
+        border-radius: 25px;
+        flex: 0 0 40%;
+    } 
+    
+    &__signup {
+        // nothing here yet
+    }
+    
+    &__link {
+        text-decoration: none;
+        &:link,
+        &:visited {
+            color: $color-white;
+        }
         
+        &:hover,
+        &:active {
+            color: $color-primary;
+        }
     }
     
 }

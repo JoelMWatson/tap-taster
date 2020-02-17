@@ -144,12 +144,6 @@ body {
     padding: 3rem;
     border-radius: 25px;
     flex: 0 0 40%; }
-  .header__link {
-    text-decoration: none; }
-    .header__link:link, .header__link:visited {
-      color: #ffffff; }
-    .header__link:hover, .header__link:active {
-      color: #CE9314; }
 
 /* ----- index page ----- */
 /* ----- register page ----- */
