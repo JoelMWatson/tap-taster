@@ -65,6 +65,7 @@ const addUser = (event, users) => {
         //TODO
     }
     
+    // navigation
     document.querySelectorAll(".navigation__link").forEach( (current) => {
         current.addEventListener("click", (e) => {
             e.preventDefault();
@@ -72,16 +73,25 @@ const addUser = (event, users) => {
         });
     });
     
+    // scroll to top
+    document.querySelector(".scroll__link").addEventListener("click", (e) => {
+        e.preventDefault();
+        window.scrollTo(0, 0);
+    });
+    
+    // toggle the sign in / sing up forms
     document.querySelector(".header__link").addEventListener("click", (e) => {
         e.preventDefault();
         toggleForm();
     });
     
+    // handle sign in form
     document.querySelector("#sign-in").addEventListener("submit", (e) => {
         addUser(e, users);
         saveUsers(users);
     }, users);
     
+    // handle sign up form
     document.querySelector("#sign-up").addEventListener("submit", (e) => {
         addUser(e, users);
         saveUsers(users);
