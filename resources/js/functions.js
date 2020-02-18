@@ -2,8 +2,16 @@ const getUsers = () => {
     return JSON.parse(localStorage.getItem('users'));
 }
 
+const getNotes = () => {
+    return JSON.parse(localStorage.getItem('notes'));
+}
+
 const saveUsers = (users) => {
     localStorage.setItem('users', JSON.stringify(users));
+}
+
+const saveNotes = (notes) => {
+    localStorage.setItem('notes', JSON.stringify(notes));
 }
 
 const isSignedIn = () => {

@@ -1,22 +1,26 @@
 (function() {
     // get list of existing users
     let users = getUsers();    
-    
     // set up default user if storage cleared
     if (!users) {
         users = [{
             username: "Joel",
             password: "Watson"
         }];
-    }
+        saveUsers(users);
+    }    
     
     // check if signed in
     let signedIn = isSignedIn();
     if (signedIn) {        
         document.querySelector('.header__form').innerHTML = `
-            <h2 class="heading-secondary">Welcome back ${signedIn}</h2>
-            <a href="https://www.watsoncodes.net/tap-taster/notes.html"><button class="btn" type="button">View Tasting Notes</button></a>
+            <h2 class="heading-secondary">Welcome back, ${signedIn}</h2>
+            <a href="https://www.watsoncodes.net/tap-taster/notes.html"><button class="btn" type="button">View Tasting Notes</button></a><button class="btn btn__empty sign-out" type="button">Sign Out</button>
         `;
+        document.querySelector(".sign-out").addEventListener("click", (e) => {
+            e.preventDefault();
+            signOut();
+        });
     } else {
         // handle sign in form
         document.querySelector("#sign-in").addEventListener("submit", (e) => {

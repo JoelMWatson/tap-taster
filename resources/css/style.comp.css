@@ -72,7 +72,8 @@ body {
   transition: all .2s;
   font-size: 1.6rem;
   position: relative;
-  border: none; }
+  border: none;
+  margin: 1rem; }
 
 .btn:hover {
   transform: translateY(-3px);
@@ -96,6 +97,11 @@ body {
   left: 0;
   z-index: -1;
   transition: all .4s; }
+
+.btn__empty {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff; }
 
 .navigation {
   display: flex;
@@ -238,6 +244,54 @@ body {
     width: 500px; }
 
 /* ----- tasting notes page ----- */
+.section-notes {
+  background-color: #f7f7f7; }
+  .section-notes h2 {
+    text-align: center; }
+  .section-notes .notes {
+    margin: 0 15rem; }
+    .section-notes .notes__box {
+      height: 32rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-around;
+      justify-items: center; }
+  .section-notes .note {
+    text-align: center;
+    background-color: #ffffff;
+    position: relative;
+    cursor: pointer; }
+    .section-notes .note__side {
+      width: 25rem;
+      height: 100%;
+      transition: all .8s ease;
+      position: absolute;
+      top: 0;
+      left: -12rem;
+      backface-visibility: hidden;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15); }
+      .section-notes .note__side--back {
+        transform: rotateY(180deg);
+        width: 25rem;
+        height: 100%; }
+    .section-notes .note__name {
+      font-size: 2rem; }
+    .section-notes .note__rating {
+      font-size: 1.6rem;
+      color: #CE9314; }
+    .section-notes .note__img {
+      width: 25rem; }
+    .section-notes .note__text {
+      font-size: 1.6rem; }
+
+.note.turn .note__side--front {
+  transform: rotateY(-180deg); }
+
+.note.turn .note__side--back {
+  transform: rotateY(0); }
+
 /* -----back to top----- */
 .scroll {
   z-index: 9999;

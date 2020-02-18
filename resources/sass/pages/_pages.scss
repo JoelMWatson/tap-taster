@@ -97,7 +97,78 @@
 /* ----- tasting notes page ----- */
 
 .section-notes {
+    background-color: $color-grey-light-1;
     
+    & h2 {
+        text-align: center;
+    }
+    
+    & .notes {
+        margin: 0 15rem;
+        
+        &__box {
+            height: 32rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: space-around;
+            justify-items: center;
+        }
+    }
+    
+    .note {
+        text-align: center;        
+        background-color: $color-white;
+        position: relative;
+        cursor: pointer;
+        
+        &__side {
+            width: 25rem;
+            height: 100%;
+            transition: all .8s ease;
+            position: absolute;
+            top: 0;
+            left: -12rem;
+            backface-visibility: hidden;
+            border-radius: $border-radius-small;
+            overflow: hidden;
+            box-shadow: $box-shadow-small-high;
+            
+            &--front {
+                
+            }
+            
+            &--back {
+                transform: rotateY(180deg); 
+                width: 25rem;
+                height: 100%;
+            }
+        }
+        
+        &__name {
+            font-size: 2rem;
+        }
+        
+        &__rating {
+            font-size: $default-font-size;
+            color: $color-primary;
+        }
+        
+        &__img {
+            width: 25rem;
+            
+        }
+        
+        &__text {
+            font-size: $default-font-size;
+        }
+    }
+}
+.note.turn .note__side--front {
+    transform: rotateY(-180deg);
+}
+
+.note.turn .note__side--back {
+    transform: rotateY(0);
 }
 
 /* -----back to top----- */

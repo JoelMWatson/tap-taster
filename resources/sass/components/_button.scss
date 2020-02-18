@@ -12,6 +12,7 @@
         font-size: $default-font-size;
         position: relative;
         border: none;
+        margin: 1rem;
     }
 
     &:hover {
@@ -43,4 +44,9 @@
         transition: all .4s;
     }
 
+    &__empty {
+        background-color: transparent;
+        color: $color-white;
+        border: 1px solid $color-white;
+    }
 }
