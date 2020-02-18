@@ -9,6 +9,10 @@
         &:not(:last-child) {
             margin-bottom: 3rem;
         }
+        
+        &--horizontal {
+            width: 50%;
+        }
     }
     
     &__label {
