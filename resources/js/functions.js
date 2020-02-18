@@ -84,7 +84,6 @@ const addUser = (users) => {
         }
     }
 };
-
 const addBeer = (beers) => {
     // clean up red feilds if any
     document.querySelectorAll(".required").forEach((current) => {
