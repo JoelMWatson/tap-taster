@@ -7,6 +7,10 @@
         width: 15rem;
         margin-left: 15rem;
         margin-top: 1rem;
+        
+        @media only screen and (max-width: $bp-sm) {
+            margin-left: 0;
+        }
     }
     
     &__logo {
@@ -20,6 +24,11 @@
         justify-content: space-around;
         list-style: none;
         margin-right: 15rem;
+        
+        @media only screen and (max-width: $bp-sm) {
+            flex: 0 0 80%;
+            margin-right: 0;
+        }
     }
     
     &__item {

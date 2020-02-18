@@ -32,21 +32,22 @@
                     <h1 class="heading-primary">Tasting notes<br>your taste buds can trust</h1>
                 </div>
                 <div class="header__form">
-                    <form action="#" class="form" id="sign-in">
+                    <form action="#" class="form" id="sign-in" class="sign-in">
                         <h2 class="heading-secondary">Please Sign In</h2> 
                         <div class="form__field">
                             <label for="username" class="form__label">Username</label>
                             <input type="text" class="form__input" name="username">
                         </div>
                         <div class="form__field">
-                            <label for="username" class="form__label">Password</label>  
-                            <input type="text" class="form__input" name="password">
+                            <label for="username" class="form__label">Password</label> 
+                            <input type="password" class="form__input" name="password">
                         </div>
+                        <p class="sign-in__error error"></p>
                         <div class="form__field">
                             <button class="btn" type="submit">Submit</button>
                         </div>                                                      
                     </form>
-                    <form action="#" class="form hidden" id="sign-up">
+                    <form action="#" class="form hidden" id="sign-up" class="sign-up">
                         <h2 class="heading-secondary">Please Sign Up</h2>
                         <div class="form__field">
                             <label for="new-username" class="form__label">New Username</label>
@@ -54,15 +55,16 @@
                         </div>
                         <div class="form__field">
                             <label for="new-password" class="form__label">New Password</label>  
-                            <input type="text" class="form__input" name="new-password">
-                        </div>                        
+                            <input type="password" class="form__input" name="new-password">
+                        </div>
+                        <p class="sign-up__error error"></p>                        
                         <div class="form__field">
                             <button class="btn" type="submit">Submit</button>
                         </div>                                                      
                     </form>
                     <hr>
                     <p class="header__signup">Don't have an account? Sign up for free <a href="#" class="header__link">here</a>!</p>
-                    <p class="header__signin hidden">Already have an account? Click <a href="#" class="header__link">here</a>!</p>
+                    <p class="header__signin hidden">Already have an account? Click <a href="#" class="header__link">here</a>!</p>          
                 </div>
             </div>
         </header>
@@ -70,7 +72,7 @@
             <section id="section-about" class="section-about">
                 <div class="about">
                     <h2 class="heading-secondary">What is tap taster</h2>
-                    <p class="about__text">Ever go to a new bar and order your beer based on the flavor profile listed in the menu, only to have it come and taste completely different? Well your not alone. Taste is complicated and it differs from person to person and I believe the tasting notes should be too. That's where Tap Taster comes in. Tap Taster is a place to keep your beer tasting notes so you dont have to worry about remembering which ones you like and which ones arent so great.</p>
+                    <p class="about__text">Ever go to a new bar and order a beer based on the flavor profile listed in the menu, only to have it arrive and taste completely different? Well, you're not alone. Taste is complicated and what is considered good differs from person to person. That's where Tap Taster comes in. Tap Taster is a place to keep your beer tasting note's so you don't have to worry about remembering which ones you liked and which ones weren't so great.</p>
                 </div>            
             </section>
             <section id="section-process" class="section-process">
@@ -123,6 +125,7 @@
         </footer>
         <!--include icons-->
         <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+        <script src="resources/js/functions.js"></script>
         <script src="resources/js/index.js"></script>
     </body>
 </html>

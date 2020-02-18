@@ -1,69 +1,54 @@
-const getUsers = () => {
-    return JSON.parse(localStorage.getItem('users'));
-}
-
-const saveUsers = (users) => {
-    localStorage.setItem('users', JSON.stringify(users));
-}
-
-const isSignedIn = () => {
-    return localStorage.getItem("signedIn");
-}
-
-const toggleForm = () => {
-    document.querySelector("#sign-up").classList.toggle('hidden');
-    document.querySelector("#sign-in").classList.toggle('hidden');
-    document.querySelector(".header__signup").classList.toggle('hidden');
-    document.querySelector(".header__signup").classList.toggle('hidden');
-}
-
-//document.querySelector(".section-team").offsetTop
-
-const signIn = (event, users) => {
-    event.preventDefault();
-    const user = document.querySelector("input[name='username']").value;
-    const pass = document.querySelector("input[name='password']").value;
-    users.forEach((current) => {
-         if (current.username === user && current.password === pass) {
-            localStorage.setItem("signedIn", user);
-             return true;
-         }
-    });
-    return false;
-}
-
-const signOut = () => {
-    localStorage.removeItem('signedIn');
-}
-
-const addUser = (event, users) => {
-    event.preventDefault();
-    const user = document.querySelector("input[name='new-username']").value;
-    const pass = document.querySelector("input[name='new-password']").value;
-    users.forEach((current) => {
-         if (current.username === user) {
-            console.log("User already exists!"); 
-            return false;
-         }
-    });    
-    users.push({username: user, password: pass});
-    localStorage.setItem("signedIn", user);
-    return true;
-};
-
 (function() {
     // get list of existing users
     let users = getUsers();    
     
-    // if it doesnt exist set it to an empty array
+    // set up default user if storage cleared
     if (!users) {
-        users = [];
+        users = [{
+            username: "Joel",
+            password: "Watson"
+        }];
     }
     
+    // check if signed in
     let signedIn = isSignedIn();
-    if (signedIn) {
-        //TODO
-    }
+    if (signedIn) {        
+        document.querySelector('.header__form').innerHTML = `
+            <h2 class="heading-secondary">Welcome back ${signedIn}</h2>
+            <a href="https://www.watsoncodes.net/tap-taster/notes.html"><button class="btn" type="button">View Tasting Notes</button></a>
+        `;
+    } else {
+        // handle sign in form
+        document.querySelector("#sign-in").addEventListener("submit", (e) => {
+            e.preventDefault();
+            document.querySelector(".sign-in__error").textContent = "";
+            signIn(users);
+            if (isSignedIn()) {
+                window.location.replace("https://www.watsoncodes.net/tap-taster/notes.html");
+            } else {
+                document.querySelector(".sign-in__error").textContent = "Username and Password combination incorrect!";
+            }
+        }, users);
+
+        // handle sign up form
+        document.querySelector("#sign-up").addEventListener("submit", (e) => {
+            e.preventDefault();
+            document.querySelector(".sign-up__error").textContent = "";
+            addUser(users);
+            saveUsers(users);
+            if (isSignedIn()) {
+                window.location.replace("https://www.watsoncodes.net/tap-taster/notes.html");
+            } else {
+                document.querySelector(".sign-up__error").textContent = "Username already in use!";
+            }        
+        }, users);
+        
+        // toggle the sign in / sing up forms
+        document.querySelector(".header__link").addEventListener("click", (e) => {
+            e.preventDefault();
+            toggleForm();
+        }); 
+    }    
     
     // navigation
     document.querySelectorAll(".navigation__link").forEach( (current) => {
@@ -77,24 +62,6 @@ const addUser = (event, users) => {
     document.querySelector(".scroll__link").addEventListener("click", (e) => {
         e.preventDefault();
         window.scrollTo(0, 0);
-    });
-    
-    // toggle the sign in / sing up forms
-    document.querySelector(".header__link").addEventListener("click", (e) => {
-        e.preventDefault();
-        toggleForm();
-    });
-    
-    // handle sign in form
-    document.querySelector("#sign-in").addEventListener("submit", (e) => {
-        addUser(e, users);
-        saveUsers(users);
-    }, users);
-    
-    // handle sign up form
-    document.querySelector("#sign-up").addEventListener("submit", (e) => {
-        addUser(e, users);
-        saveUsers(users);
-    }, users);
+    });       
 })();
 

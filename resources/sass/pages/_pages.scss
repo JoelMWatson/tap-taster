@@ -8,6 +8,10 @@
 
 .hidden { display: none; }   
 
+.error { color: red; }
+
+.required { background-color: pink; }
+
 .section-about {
     
     & h2 {
@@ -90,9 +94,11 @@
     }
 }
 
-/* ----- register page ----- */
+/* ----- tasting notes page ----- */
 
-
+.section-notes {
+    
+}
 
 /* -----back to top----- */
 .scroll {

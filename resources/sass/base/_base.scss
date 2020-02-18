@@ -10,7 +10,7 @@ html {
     // Defines what 1 rem is for creating responsive later
     font-size: 62.5%; // sets from default 16px to 10px
     
-    @media only screen and (max-width: $breakpoint) {
+    @media only screen and (max-width: $bp-lg) {
         font-size: 50%;
     }
 }
